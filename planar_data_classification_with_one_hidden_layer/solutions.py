@@ -284,7 +284,7 @@ def nn_model(X, Y, n_h, num_iterations = 10000, print_cost=False):
     return parameters
     
  
- ############################################# Exercise 9 - predict
+############################################# Exercise 9 - predict
 
 def predict(parameters, X):
     """
@@ -305,7 +305,11 @@ def predict(parameters, X):
         
     return predictions
     
-  
+############################################# Test the Model on the Planar Dataset
+
+'''It's time to run the model and see how it performs on a planar dataset. 
+Run the following code to test your model with a single hidden layer of $𝑛ℎ$ hidden units!'''  
+
 # Build a model with a n_h-dimensional hidden layer
 parameters = nn_model(X, Y, n_h = 4, num_iterations = 10000, print_cost=True)
 
@@ -320,9 +324,11 @@ plt.title("Decision Boundary for hidden layer size " + str(4))
 predictions = predict(parameters, X)
 print ('Accuracy: %d' % float((np.dot(Y, predictions.T) + np.dot(1 - Y, 1 - predictions.T)) / float(Y.size) * 100) + '%')
 
+############################################# Tuning hidden layer size (optional/ungraded exercise)
+
+'''Run the following code. Then, observe different behaviors of the model for various hidden layer sizes.'''
 
 # This may take about 2 minutes to run
-
 plt.figure(figsize=(16, 32))
 hidden_layer_sizes = [1, 2, 3, 4, 5, 20, 50]
 for i, n_h in enumerate(hidden_layer_sizes):
